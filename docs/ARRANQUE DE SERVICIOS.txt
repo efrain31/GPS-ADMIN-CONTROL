@@ -1,0 +1,133 @@
+ARRANQUE DE SERVICIOS
+
+ 
+(PARA ACTIVAR ENTORNO LARAVEL)
+venv\Scripts\activate
+
+FASTAPI
+uvicorn main:app --reload --port 8001
+
+REACT
+npm run dev
+
+
+///////////////////////////////////////////////////////////
+
+Manejo del entorno
+
+BACKEND
+
+MIGRACION DE TABLAS AUTOMATICO A POSTGREST
+
+AGREGAR MIGRACIONES
+ python init_db.py
+ELIMINAR MIGRACIONES
+ python reset_db.py
+
+(EN TERMINAL(CD /backend/)
+python database.py
+
+NOTA  INSTALAR ALEMBIC
+(raiz)pip install alembic
+(cd/backend) alembic init alembic
+
+alembic.ini CAMBIA A :
+sqlalchemy.url = postgresql+psycopg2://postgres:134679@localhost:5432/GPS
+
+IMPLEMENTACION DE ALEMBIC
+
+INICIA ALEMBIC
+alembic init alembic
+CREA MIGRACIONES
+alembic revision --autogenerate -m "inicial"
+APLICA CAMBIOS EN BD
+alembic upgrade head
+
+SI SE MODIFICA UN MODELO Y SE QUIERE ACTUALIZAR EN BD USAR:
+pip install alembic
+alembic init migrations
+
+alembic revision --autogenerate -m "agregar campos a gps_modelos(<---NOMBRE DE TABLA)"
+alembic upgrade head
+DESAHACER MIGRACION
+alembic downgrade -1
+Migraciones con
+
+
+INSTALLA JWT (EN RAIZ PROYECTO)
+pip install python-multipart
+
+///////////////////////////////////////////////////////
+
+
+
+FRONT-END
+ADMIN-WEB>
+npm create vite@latest frontend -- --template react-ts
+
+◆  Use rolldown-vite (Experimental)?:no
+Install with npm and start now?yes
+
+CD/FRONT
+npm install @mui/material @emotion/react @emotion/styled
+npm install @reduxjs/toolkit react-redux
+npm install axios react-router-dom
+npm install axios
+
+
+GENERA UNA BUILD
+npm run build
+npm install -g serve
+
+STAR SERVER 
+serve -s dist
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+credenciales 
+TECNICO 
+email = "tecnico@prueba.com"
+ nombre="tec",
+ password=hash_password("tec134679"),
+ rol_id=3,
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWNuaWNvQHBydWViYS5jb20iLCJpZCI6NjEsImV4cCI6MTc1OTUwOTYyNn0.Qgb8NaUkLupqQ16jzBlFsSkuDfls-AlPqWvtQ4NRG5o",
+-------------------------------------------------------------
+
+ADMIN
+email = "admin@prueba.com"
+ nombre="admin",
+  password=hash_password("admin134679"),
+	 rol_id=2, 
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBwcnVlYmEuY29tIiwiaWQiOjYyLCJleHAiOjE3NTk1MDgyMTN9.AnxOGpQ5oILGuin-iuxD7k6UDff19qANAXbYO4vWnBk",
+
+----------------------------------------------------------
+SUPERADMIN
+email = "superadmin@prueba.com"
+        nombre="Sadmin",
+        password=hash_password("Sadmin134679"),
+ rol_id=1, 
+
+
+------------------------------------------------------------------------
+
+PARA DAR DE ALTA ADMIN O SUPER ADMIN
+estos solo se dan de alta mediante un script en <      backend/scripts/create_users.py >   y correr el comando después de cambiar los datos marcados en el script 
+COMANDO: 
+python -m scripts.create_users
+
+
+VISTAS 
+
+en CD/ADMIN-WEB/FRONTEND
+limpia cache 
+npm cache clean --force
+
+menu
+npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
+npm install framer-motion
+npm run dev 
+
+
+

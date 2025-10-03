@@ -1,0 +1,30 @@
+
+from .usuario import UsuarioBase,UsuarioCreate,UsuarioRead,UsuarioReadWithRelations
+from .rol import RolBase,RolCreate ,RolRead,RolReadWithRelations
+from .empresa import EmpresaBase,EmpresaCreate,EmpresaRead, EmpresaReadWithUnidades
+from .unidad import UnidadBase,UnidadCreate,UnidadRead, UnidadReadWithRelations
+from .gps_modelo import GpsModeloBase,GpsModeloCreate,GpsModeloRead 
+from .cable import CableBase,CableCreate, CableRead
+from .disco_duro import DiscoDuroBase,DiscoDuroCreate, DiscoDuroRead
+from .lectora import LectoraBase,LectoraCreate, LectoraRead
+from .pieza import PiezaBase,PiezaCreate, PiezaRead,PiezaReadWithRelations
+from .inventario_interno import InventarioInternoBase,InventarioInternoCreate, InventarioInternoRead,InventarioInternoReadWithRelations
+from .unidad_pieza_registro import UnidadPiezaRegistroBase,UnidadPiezaRegistroCreate, UnidadPiezaRegistroRead,UnidadPiezaRegistroReadWithRelations
+from .falla import FallaBase,FallaCreate, FallaRead,FallaReadWithRelations
+from .log_falla import LogFallaBase,LogFallaCreate, LogFallaRead,LogFallaReadWithRelations
+from .servicio import ServicioBase,ServicioCreate, ServicioRead,ServicioReadWithRelations
+from .servicio_evidencia import ServicioEvidenciaBase,ServicioEvidenciaCreate, ServicioEvidenciaRead,ServicioEvidenciaReadWithRelations
+from .servicio_historial import ServicioHistorialBase,ServicioHistorialCreate, ServicioHistorialRead,ServicioHistorialReadWithRelations
+from .servicio_pieza import ServicioPiezaBase,ServicioPiezaCreate, ServicioPiezaRead,ServicioPiezaReadWithRelations
+from .servicio_falla import ServicioFallaCreate, ServicioFallaRead
+from .servicio_pendiente import ServicioPendienteBase,ServicioPendienteCreate, ServicioPendienteRead,ServicioPendienteReadWithRelations
+from .servicio_tiempo import ServicioTiempoBase,ServicioTiempoCreate, ServicioTiempoRead,ServicioTiempoReadWithRelations
+from .servicio_extension import ServicioExtensionCreate, ServicioExtensionRead
+from .evidencia import EvidenciaBase,EvidenciaCreate, EvidenciaRead,EvidenciaReadWithRelations
+
+
+from .rol import RolReadWithRelations
+from .usuario import UsuarioRead
+
+RolReadWithRelations.model_rebuild()
+UsuarioRead.model_rebuild()

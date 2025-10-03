@@ -1,0 +1,54 @@
+Crear entorno
+
+BACK-END
+mkdir backend
+cd backend
+python -m venv venv
+source venv/bin/activate   # en Linux/macOS
+venv\Scripts\activate      # en Windows
+pip install fastapi uvicorn sqlalchemy psycopg2-binary alembic python-jose[cryptography] passlib[bcrypt]
+
+
+# Crear archivos principales
+ni main.py -ItemType File
+ni database.py -ItemType File
+
+
+
+# Crear carpetas de módulos
+mkdir models, schemas, routes
+
+
+# Crear archivos dentro de cada carpeta
+ni models\usuarios.py -ItemType File
+ni schemas\usuarios.py -ItemType File
+ni routes\usuarios.py -ItemType File
+
+
+# Crear __init__.py en cada subcarpeta
+ni models\__init__.py -ItemType File
+ni schemas\__init__.py -ItemType File
+ni routes\__init__.py -ItemType File
+
+INICIAR LOS INITS PARA QUE FUNCIONEN COMO RUTAS
+
+EJECUTA EN  CD/backend
+uvicorn main:app --reload
+
+INSTALA EN CD/BACKEND
+venv\Scripts\activate
+pip install "pydantic[email]"
+uvicorn main:app --reload
+deactivate
+
+////////////////////////////////////////////////
+
+Flujo resumido
+
+PostgreSQL
+↑
+│
+FastAPI (backend: lógica + datos)
+│
+├── React + materia iu + ridux (frontend web)
+├── Android / iOS apps
