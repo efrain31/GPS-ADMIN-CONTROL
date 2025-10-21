@@ -4,6 +4,16 @@ ARRANQUE DE SERVICIOS
 (PARA ACTIVAR ENTORNO LARAVEL)
 venv\Scripts\activate
 
+dependecias
+python --version
+pip install fastapi uvicorn[standard]
+pip install passlib[bcrypt]
+
+
+INSTALA DEPENDENCIAS 
+pip install -r requirements.txt
+
+
 FASTAPI
 uvicorn main:app --reload --port 8001
 

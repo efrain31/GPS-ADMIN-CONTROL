@@ -1,10 +1,14 @@
 from database import engine, Base
-import models  
+import models  # Importa todos tus modelos
 
-def init_db():
-    print(" Creando tablas en la base de datos...")
+def reset_db():
+    print("Eliminando todas las tablas de la base de datos...")
+    Base.metadata.drop_all(bind=engine)  # Esto elimina todas las tablas respetando FK
+    print("Todas las tablas eliminadas correctamente.")
+
+    print("Creando todas las tablas nuevamente...")
     Base.metadata.create_all(bind=engine)
-    print(" Tablas creadas correctamente.")
+    print("Tablas creadas correctamente.")
 
 if __name__ == "__main__":
-    init_db()
+    reset_db()

@@ -4,13 +4,14 @@ from .usuarios import Usuario
 from .roles import Rol
 from .empresas import Empresa
 from .unidades import Unidad
-
+from .planta import Planta
 
 from .gps_modelos import GpsModelo
 from .cables import Cable
 from .discos_duros import DiscoDuro
 from .lectoras import Lectora
 from .piezas import Pieza 
+from .camaras import Camara
 from .inventario_interno import InventarioInterno
 from .unidad_pieza_registro import UnidadPiezaRegistro
 
@@ -32,8 +33,8 @@ from .notificaciones import Notificacion
 # Base.metadata.create_all(engine) podrá registrar todas las tablas
 __all__ = [
     "Usuario", "Rol",
-    "Empresa", "Unidad",
-    "Lectora", "DiscoDuro", "Cable", "GpsModelo",
+    "Empresa", "Unidad","PLanta",
+    "Lectora", "DiscoDuro", "Cable", "GpsModelo", "Camara",
     "Pieza", "InventarioInterno", "UnidadPiezaRegistro",
     "Falla", "LogFalla",
     "Servicio", "ServicioPendiente", "ServicioFalla", "ServicioPieza", "ServicioHistorial", "ServicioEvidencia",

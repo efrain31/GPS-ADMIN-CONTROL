@@ -10,6 +10,17 @@ class InventarioInternoBase(BaseModel):
     danado: Optional[bool] = False
     fecha_actualizacion: Optional[datetime] = None
 
+class InventarioInternoUpdate(BaseModel):
+    unidad_id: Optional[int] = None
+    pieza_id: Optional[int] = None
+    cantidad: Optional[int] = None
+    danado: Optional[bool] = None
+    fecha_actualizacion: Optional[datetime] = None
+    
+
+    class Config:
+        orm_mode = True
+
 class InventarioInternoCreate(InventarioInternoBase):
     pass
 
@@ -23,6 +34,6 @@ class InventarioInternoRead(InventarioInternoBase):
 
 # ----------  relaciones ----------
 class InventarioInternoReadWithRelations(InventarioInternoRead):
-    unidad: Optional[int] = None 
-    pieza: Optional[int] = None  
-    registros: Optional[List[int]] = [] 
+    unidad: Optional[dict] = None  # antes era int
+    pieza: Optional[dict] = None
+    registros: Optional[List[int]] = []

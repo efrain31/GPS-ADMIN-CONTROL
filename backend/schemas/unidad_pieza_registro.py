@@ -20,6 +20,10 @@ class UnidadPiezaRegistroRead(UnidadPiezaRegistroBase):
     model_config = {
     "from_attributes": True
 }
+class UnidadPiezaRegistroUpdate(BaseModel):
+    cantbus: Optional[str] = None
+    danado: Optional[bool] = None
+    motivo_cambio: Optional[str] = None
 
 
 # ----------  relaciones ----------

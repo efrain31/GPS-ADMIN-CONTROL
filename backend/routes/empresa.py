@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import Dict, List
 
 from database import get_db
 from models.empresas import Empresa
@@ -44,3 +44,7 @@ def delete_empresa(empresa_id: int, db: Session = Depends(get_db)):
     db.commit()
     return {"message": "Empresa eliminada correctamente"}
 
+@router.get("/select", response_model=List[Dict[str, str]])
+def get_empresas_select(db: Session = Depends(get_db)):
+    empresas = db.query(Empresa.id, Empresa.nombre).all()
+    return [{"id": str(e.id), "nombre": e.nombre} for e in empresas]

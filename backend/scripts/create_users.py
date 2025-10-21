@@ -4,13 +4,13 @@ from models.usuarios import Usuario
 
 db = SessionLocal()
 
-email = "admin@prueba.com" #CAMBIA POR TUS DATOS
+email = "Admin@prueba.com" #CAMBIA POR TUS DATOS
 
 usuario_existente = db.query(Usuario).filter(Usuario.email == email).first()
 
 if not usuario_existente:
     nuevo_usuario = Usuario(
-        nombre="admin", #CAMBIA POR TUS DATOS
+        nombre="Admin", #CAMBIA POR TUS DATOS
         email=email,
         password=hash_password("admin134679"), #CAMBIA POR TUS DATOS
         rol_id=2,  # asegúrate que ese rol exista en tu tabla roles O CREALO
