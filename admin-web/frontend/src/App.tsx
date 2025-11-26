@@ -28,6 +28,7 @@ const App: React.FC = () => {
           element={
             usuario && (usuario.rol_id === 1 || usuario.rol_id === 2)
               ? <AdminPage />
+              
               : <Navigate to="/login" />
           }
         />

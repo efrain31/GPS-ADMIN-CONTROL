@@ -1,8 +1,13 @@
 ARRANQUE DE SERVICIOS
 
  
-(PARA ACTIVAR ENTORNO LARAVEL)
+(PARA ACTIVAR ENTORNO BACKEND)
 venv\Scripts\activate
+
+FASTAPI
+python -m uvicorn main:app --reload --port 8001
+
+
 
 dependecias
 python --version
@@ -14,8 +19,6 @@ INSTALA DEPENDENCIAS
 pip install -r requirements.txt
 
 
-FASTAPI
-uvicorn main:app --reload --port 8001
 
 REACT
 npm run dev
